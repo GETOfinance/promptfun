@@ -147,10 +147,6 @@ flowchart LR
   B1 -. indexer-lag-free .-> F
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/architecture.svg" />
-  <img src="docs/diagrams/architecture.png" alt="System Architecture diagram" />
-</picture>
 
 <em>Figure A: System Architecture overview</em>
 
@@ -180,10 +176,6 @@ sequenceDiagram
   UI-->>User: Success + Explorer link
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/launch-sequence.svg" />
-  <img src="docs/diagrams/launch-sequence.png" alt="Launch sequence diagram" />
-</picture>
 
 <em>Figure B: End-to-end launch sequence</em>
 
@@ -198,10 +190,6 @@ flowchart TD
   E --> F[UI refreshes price/supply\nconfirms hash + link]
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/buy-flow.svg" />
-  <img src="docs/diagrams/buy-flow.png" alt="Buy flow diagram" />
-</picture>
 
 <em>Figure C: Buy N tokens on a bonding curve</em>
 
@@ -231,10 +219,6 @@ flowchart LR
   F --> C
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/data-responsibilities.svg" />
-  <img src="docs/diagrams/data-responsibilities.png" alt="Data responsibilities diagram" />
-</picture>
 
 <em>Figure D: Data responsibilities and boundaries</em>
 
@@ -263,10 +247,6 @@ stateDiagram-v2
   end note
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/xp-quests-state-machine.svg" />
-  <img src="docs/diagrams/xp-quests-state-machine.png" alt="XP/Quests state machine" />
-</picture>
 
 <em>Figure E: XP / quests state machine</em>
 
@@ -291,10 +271,6 @@ flowchart LR
   classDef ext fill:#eef,stroke:#99f
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/marketplace-listing-flow.svg" />
-  <img src="docs/diagrams/marketplace-listing-flow.png" alt="Marketplace listing flow" />
-</picture>
 
 <em>Figure F: Marketplace listing flow</em>
 
@@ -336,10 +312,6 @@ flowchart TB
   class Client,Frontend,Backend,Storage,Chain boundary
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/threat-model.svg" />
-  <img src="docs/diagrams/threat-model.png" alt="Threat model diagram" />
-</picture>
 
 <em>Figure G: Threat model and trust boundaries</em>
 
@@ -365,10 +337,6 @@ flowchart TD
   end
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/bonding-curve-math.svg" />
-  <img src="docs/diagrams/bonding-curve-math.png" alt="Bonding curve math (simplified)" />
-</picture>
 
 <em>Figure H: Simplified bonding curve payment estimation</em>
 
@@ -389,9 +357,5 @@ flowchart LR
   class A,B,C,D,E,F,G state
 ```
 
-<picture>
-  <source type="image/svg+xml" srcset="docs/diagrams/wallet-connect-wireframe.svg" />
-  <img src="docs/diagrams/wallet-connect-wireframe.png" alt="Wallet connect UX wireframe" />
-</picture>
 
 <em>Figure I: Wallet connect & buy flow (wireframe)</em>
