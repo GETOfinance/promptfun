@@ -112,27 +112,27 @@ Built with Move, Next.js, FastAPI, Pinecone, and Gemini on Aptos Testnet. Let’
 flowchart LR
   subgraph Client
     U[User]
-    W[Wallet (Petra/Martian)]
+    W[Wallet]
   end
 
   subgraph Frontend
-    F[Next.js dApp\n(prompt-fun-dapp)]
+    F[Next.js dApp (prompt-fun-dapp)]
   end
 
   subgraph Backend
     B1[FastAPI: Core API]
-    B2[FastAPI: RAG Service\n(lngchainBackend)]
+    B2[FastAPI: RAG Service (lngchainBackend)]
     DB[(MongoDB)]
   end
 
   subgraph AI & Vectors
     PC[(Pinecone)]
-    GM[Gemini (Google\nGenerative AI)]
+    GM[Gemini (Google Generative AI)]
   end
 
   subgraph On-Chain
     APT[Aptos Testnet]
-    MV[Move Modules:\nBondingCurve, PromptToken, XPSystem]
+    MV[Move Modules: BondingCurve, PromptToken, XPSystem]
   end
 
   U -->|Chat / UI| F
@@ -183,11 +183,11 @@ sequenceDiagram
 ### C) Buy N Tokens (Bonding Curve Flow)
 ```mermaid
 flowchart TD
-  A[User sets amount N] --> B[UI queries view fns\nget_token_supply, get_token_price]
-  B --> C[Compute estimated payment\nprice = base_price * (supply + N)]
+  A[User sets amount N] --> B[UI queries view fns get_token_supply, get_token_price]
+  B --> C[Compute estimated payment: price = base_price * (supply + N)]
   C --> D[User signs buy_token(symbol, N, payment)]
-  D --> E[Aptos executes\nupdates supply]
-  E --> F[UI refreshes price/supply\nconfirms hash + link]
+  D --> E[Aptos executes and updates supply]
+  E --> F[UI refreshes price/supply and confirms hash + link]
 ```
 
 
@@ -201,15 +201,15 @@ flowchart LR
     F[UX, Wallet, Chat]
   end
   subgraph Backend
-    API[Core API]\n[Profiles, Achievements, Marketplace]
-    RAG[RAG Service]\n[Embeddings, Retrieval, LLM]
+    API[Core API (Profiles, Achievements, Marketplace)]
+    RAG[RAG Service (Embeddings, Retrieval, LLM)]
   end
   subgraph Storage
     M[(MongoDB)]
     P[(Pinecone Vectors)]
   end
   subgraph Chain
-    C[Aptos]\n[Move Modules & State]
+    C[Aptos (Move Modules & State)]
   end
 
   F --> API
