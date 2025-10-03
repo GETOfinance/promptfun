@@ -1,0 +1,340 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 210 40% 60%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 85%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 210 40% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground bg-background;
+    font-family: "Poppins", system-ui, -apple-system, sans-serif;
+    font-weight: 500; /* Changed from 300 to 500 for more dynamic look */
+    background: #0a0a0a;
+    background-image: radial-gradient(circle at 20% 20%, rgba(100, 116, 139, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(100, 116, 139, 0.02) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Subtle grid overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@layer components {
+  .elegant-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(23, 23, 23, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .elegant-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(100, 116, 139, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .elegant-button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    font-weight: 500; /* Changed from 400 to 500 */
+    font-size: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(100, 116, 139, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    backdrop-filter: blur(12px);
+    padding: 0.75rem 1.5rem;
+  }
+
+  .elegant-button:hover {
+    background: rgba(100, 116, 139, 0.15);
+    border-color: rgba(100, 116, 139, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(100, 116, 139, 0.1);
+  }
+
+  .elegant-button-primary {
+    background: rgba(100, 116, 139, 0.15);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    font-weight: 600; /* Changed from default to 600 */
+  }
+
+  .elegant-button-primary:hover {
+    background: rgba(100, 116, 139, 0.2);
+    border-color: rgba(100, 116, 139, 0.4);
+  }
+
+  .elegant-input {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 0.875rem 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    font-weight: 500; /* Changed from 300 to 500 */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(12px);
+  }
+
+  .elegant-input::placeholder {
+    color: rgba(156, 163, 175, 0.6);
+    font-weight: 400; /* Changed from default to 400 */
+  }
+
+  .elegant-input:focus {
+    border-color: rgba(100, 116, 139, 0.3);
+    outline: none;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+  }
+
+  .subtle-glow {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(100, 116, 139, 0.08) 0%, rgba(100, 116, 139, 0.02) 40%, transparent 70%);
+    filter: blur(60px);
+    animation: gentle-float 12s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .gradient-text-subtle {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(100, 116, 139, 0.8) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600; /* Added font-weight for better visibility */
+  }
+
+  .accent-text {
+    color: rgba(100, 116, 139, 0.9);
+    font-weight: 600; /* Changed from default to 600 */
+  }
+
+  .nav-link-elegant {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500; /* Changed from 300 to 500 */
+    font-size: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link-elegant:hover {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600; /* Added weight change on hover */
+  }
+
+  .nav-link-elegant::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: rgba(100, 116, 139, 0.6);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link-elegant:hover::after {
+    width: 100%;
+  }
+
+  .feature-card-elegant {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(23, 23, 23, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    cursor: pointer;
+  }
+
+  .feature-card-elegant:hover {
+    transform: translateY(-4px);
+    border-color: rgba(100, 116, 139, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .stat-card-elegant {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(23, 23, 23, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .stat-card-elegant:hover {
+    transform: translateY(-2px);
+    border-color: rgba(100, 116, 139, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .pricing-card-elegant {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(23, 23, 23, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    padding: 2.5rem;
+  }
+
+  .pricing-card-elegant.popular {
+    border-color: rgba(100, 116, 139, 0.3);
+    box-shadow: 0 8px 32px rgba(100, 116, 139, 0.08);
+  }
+
+  .pricing-card-elegant.popular::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(100, 116, 139, 0.6), transparent);
+  }
+
+  /* Enhanced text styles for better readability and dynamic look */
+  .text-dynamic {
+    font-weight: 500;
+    letter-spacing: 0.025em;
+  }
+
+  .text-dynamic-bold {
+    font-weight: 600;
+    letter-spacing: 0.025em;
+  }
+
+  .text-dynamic-light {
+    font-weight: 400;
+    letter-spacing: 0.025em;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.4);
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(100, 116, 139, 0.2);
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  ::-moz-selection {
+    background: rgba(100, 116, 139, 0.2);
+    color: rgba(255, 255, 255, 0.95);
+  }
+}

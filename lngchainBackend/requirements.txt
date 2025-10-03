@@ -1,0 +1,11 @@
+langchain
+langchain-google-genai
+pinecone
+fastapi
+uvicorn
+python-dotenv
+PyPDF2
+tiktoken 
+pydantic
+python-docx
+pymongo

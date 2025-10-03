@@ -1,0 +1,7 @@
+ transformers
+torch
+pdfplumber
+sentence-transformers
+requests
+numpy
+scikit-learn

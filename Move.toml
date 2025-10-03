@@ -1,0 +1,16 @@
+[package]
+name = "prompt_fun"
+version = "1.0.0"
+authors = []
+
+[addresses]
+prompt_fun = "0x16d281ff60374558dc2412dc6c759061a744a58bb0c69030307c5b4f889a3535"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
